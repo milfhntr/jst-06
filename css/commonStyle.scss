@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+button, input{
+    border: none;
+    outline: none;
+}
+
+main{
+    padding-top: 100px;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: black;
+    >div:first-child{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 500px;
+        width: 100%;
+        font-size: 18px;
+        a{
+            color: white;
+            transition: 300ms;
+            &:hover{
+                color: white;
+                border-bottom: 1px solid;
+                text-decoration: none;
+            }
+        }
+    }
+    &__basket{
+        width: 50px;
+        height: 50px;
+    }
+    &__logo{
+        width: 80px;
+        height: 80px;
+    }
+    &__hambur-menu{
+        width: 40px;
+        height: 40px;
+        display: none;
+    }
+}
+
+.header-modal{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    &__blur{
+        backdrop-filter: blur(2px);
+        width:  80%;
+        height: 100vh;
+    }
+    &__content{
+        background-color: black;
+        max-width: 400px;
+        width: 100%;
+        height: 100vh;
+        padding: 50px;
+    }
+    &__list{
+        display: block !important;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 100px;
+        font-weight: 600;
+        li{
+            margin-top: 30px;
+        }
+    }
+    &__box-top{
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+@media(max-width: 1250px){
+    .container{
+        margin: 0;
+        padding: 0 12%;
+    }
+}
+
+@media(max-width: 900px){
+    .header{
+        &__list, &__basket{
+            display: none;
+        }
+        &__hambur-menu{
+            display: block;
+        }
+    }
+}
+@media(max-width: 600px){
+    .header{
+        &__logo{
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .header-modal{
+        &__blur{
+            width: 0;
+        }
+        &__content{
+            max-width: 600px;
+        }
+    }
+}
